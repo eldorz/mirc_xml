@@ -1,0 +1,5 @@
+# Specify filepatterns you want git to ignore.
+mircdocs/*
+MIRCdocument_*
+cases.csv
+mirc_xml.sublime-workspace
