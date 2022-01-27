@@ -12,7 +12,9 @@ def get_xml_root(xmlstring):
 
 def has_siuid(root):
     if root.find("./phi/study/si-uid") is not None:
+        print("accession found", flush = True)
         return True
+    print("accession not found", flush = True)
     return False
 
 def sectionstr(root, section):
@@ -72,6 +74,7 @@ def main(args):
     write_first_row(args.outfile)
     folderRegEx = re.compile(r'_([0-9\.]*)\.zip$')
     for z in zips:
+        print("processing {}".format(z), flush = True)
         mo = folderRegEx.search(z)
         folder = mo.group(1)
         # read zip
